@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Saira', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6 {
+  color: #694f5d;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #efc7c2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bg-gray {
+  background-color: #bfd3c1;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-purple, .divider {
+  background-color: #694f5d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.crossed-text {
+  text-decoration: line-through;
+}
+
+progress {
+  background-color: #694f5d;
+  height: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+progress::-webkit-progress-bar {
+  background-color: #ffffff;
+}
+progress::-webkit-progress-value {
+  background-color: #694f5d;
+}
+progress::-moz-progress-bar {
+  background-color: #694f5d;
 }
