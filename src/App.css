@@ -2,12 +2,50 @@
   font-family: 'Saira', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #694f5d;
-}
-
 body {
   background-color: #efc7c2;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-title {
+  color: #694f5d;
+  text-transform: uppercase;
+}
+
+.collection-header {
+  list-style: none;
+  text-align: center;
+}
+
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.collection-item > div, .collection-item > span {
+  cursor: pointer;
+  width: 100%;
+}
+
+.collection-item .secondary-content {
+  display: flex;
+  gap: 5px;
+}
+
+.collection-item .secondary-content.task {
+  width: 80px;
+}
+
+.collection-item .secondary-content.list {
+  width: 30px;
+  flex-direction: column;
 }
 
 .bg-gray {
@@ -23,17 +61,30 @@ body {
 }
 
 progress {
+  width: 95%;
   background-color: #694f5d;
   height: 8px;
   border: 1px solid gray;
   border-radius: 2px;
 }
+
 progress::-webkit-progress-bar {
   background-color: #ffffff;
 }
+
 progress::-webkit-progress-value {
   background-color: #694f5d;
 }
+
 progress::-moz-progress-bar {
   background-color: #694f5d;
+}
+
+.transparent, .transparent:hover {
+  box-shadow: none;
+}
+
+.group {
+  display: flex;
+  gap: 2px;
 }
