@@ -83,8 +83,3 @@ progress::-moz-progress-bar {
 .transparent, .transparent:hover {
   box-shadow: none;
 }
-
-.group {
-  display: flex;
-  gap: 2px;
-}
