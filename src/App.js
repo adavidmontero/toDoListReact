@@ -23,16 +23,16 @@ function App() {
   const [lists, setLists] = useState(initialLists);
 
   //State que contiene la lista seleccionada
-  const [idSelected, setIdSelected] = useState(null);
+  const [idSelected, setIdSelected] = useState('');
 
   //State que contiene todas las tareas
   const [tasks, setTasks] = useState(initialTasks);
 
   //State que contiene el id para editar la lista
-  const [idList, setIdList] = useState(null);
+  const [idList, setIdList] = useState('');
 
   //State que contiene el id para editar la tarea
-  const [idTask, setIdTask] = useState(null);
+  const [idTask, setIdTask] = useState('');
 
   useEffect(() => {
     let initialLists = JSON.parse(localStorage.getItem('lists'));

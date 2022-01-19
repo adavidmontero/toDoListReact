@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ShortUniqueId from 'short-unique-id';
 import Error from './Error';
+import PropTypes from 'prop-types';
 
 const FormTask = ({ idSelected, idTask, tasks, setIdTask, setTasks }) => {
 
@@ -78,7 +79,7 @@ const FormTask = ({ idSelected, idTask, tasks, setIdTask, setTasks }) => {
             id: '', nameTask: '', completed: false, idList: idSelected
         });
 
-        setIdTask(null);
+        setIdTask('');
         setError(false);
     }
 
@@ -99,11 +100,15 @@ const FormTask = ({ idSelected, idTask, tasks, setIdTask, setTasks }) => {
             }
             <div className="row">
                 <div className="input-field col s8">
-                    <input id="nameTask" type="text" className="validate" name="nameTask" 
+                    <input 
+                        className="validate" 
+                        id="nameTask" 
+                        name="nameTask" 
+                        type="text" 
+                        value={ nameTask }
                         onChange={ setStateTask } 
                         onFocus={ () => { document.querySelector('#label-nameTask').setAttribute('class', 'active') } }
                         onBlur={ setLabelTask }
-                        value={ nameTask }
                     />
                     <label htmlFor="nameTask" id="label-nameTask">Nombre de la tarea</label>
                 </div>
@@ -139,5 +144,13 @@ const FormTask = ({ idSelected, idTask, tasks, setIdTask, setTasks }) => {
         </form>
      );
 }
+
+FormTask.propTypes = {
+    idSelected: PropTypes.string.isRequired, 
+    idTask: PropTypes.string.isRequired, 
+    tasks: PropTypes.array.isRequired, 
+    setIdTask: PropTypes.func.isRequired,
+    setTasks: PropTypes.func.isRequired
+};
  
 export default FormTask;

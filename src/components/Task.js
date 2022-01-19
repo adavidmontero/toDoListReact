@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Task = ({ task, tasks, setIdTask, setTasks }) => {
 
     const changeTask = (id, e) => {
@@ -55,5 +57,12 @@ const Task = ({ task, tasks, setIdTask, setTasks }) => {
         </li>
     );
 }
+
+Task.propTypes = {
+    task: PropTypes.object.isRequired, 
+    tasks: PropTypes.array.isRequired, 
+    setIdTask: PropTypes.func.isRequired, 
+    setTasks: PropTypes.func.isRequired
+};
  
 export default Task;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ShortUniqueId from 'short-unique-id';
 import Error from './Error';
+import PropTypes from 'prop-types';
 
 const FormList = ({ lists, idList, setLists, setIdList }) => {
 
@@ -86,7 +87,7 @@ const FormList = ({ lists, idList, setLists, setIdList }) => {
             name: ''
         });
 
-        setIdList(null);
+        setIdList('');
         setError(false);
     };
 
@@ -107,11 +108,15 @@ const FormList = ({ lists, idList, setLists, setIdList }) => {
             }
             <div className="row">
                 <div className="input-field col s8">
-                    <input id="name" type="text" className="validate" name="name" 
+                    <input 
+                        className="validate" 
+                        id="name" 
+                        name="name" 
+                        type="text" 
+                        value={ name }
                         onChange={ setState } 
                         onFocus={ () => { document.querySelector('#label-name').setAttribute('class', 'active') } }
                         onBlur={ setLabel }
-                        value={ name }
                     />
                     <label htmlFor="name" id="label-name">Nombre de lista</label>
                 </div>
@@ -147,5 +152,12 @@ const FormList = ({ lists, idList, setLists, setIdList }) => {
         </form>
      );
 }
+
+FormList.propTypes = {
+    lists: PropTypes.array.isRequired, 
+    idList: PropTypes.string.isRequired, 
+    setLists: PropTypes.func.isRequired, 
+    setIdList: PropTypes.func.isRequired
+};
  
 export default FormList;

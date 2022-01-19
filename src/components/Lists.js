@@ -1,4 +1,5 @@
 import List from "./List";
+import PropTypes from 'prop-types';
 
 const Lists = ({ idSelected, lists, tasks, setIdSelected, setIdList, setLists, setTasks }) => {
     return (
@@ -24,5 +25,15 @@ const Lists = ({ idSelected, lists, tasks, setIdSelected, setIdList, setLists, s
         </ul>
     );
 }
+
+Lists.propTypes = {
+    idSelected: PropTypes.string.isRequired, 
+    lists: PropTypes.array.isRequired, 
+    tasks: PropTypes.array.isRequired, 
+    setIdSelected: PropTypes.func.isRequired, 
+    setIdList: PropTypes.func.isRequired, 
+    setLists: PropTypes.func.isRequired, 
+    setTasks: PropTypes.func.isRequired
+};
  
 export default Lists;

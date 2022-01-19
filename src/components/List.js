@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const List = ({ list, lists, idSelected, tasks, setIdSelected, setIdList, setLists, setTasks }) => {
 
     const selectedList = (id, e) => {
@@ -5,7 +7,7 @@ const List = ({ list, lists, idSelected, tasks, setIdSelected, setIdList, setLis
     
         //Quita la selección en caso de que esté dando click a la misma lista
         if (id === idSelected) {
-          setIdSelected(null);
+          setIdSelected('');
           document.querySelector(`#${id}`).setAttribute('class', 'collection-item');
         } else if (id !== idSelected && idSelected) {
           //Cambiar elemento seleccionado por otro
@@ -22,7 +24,7 @@ const List = ({ list, lists, idSelected, tasks, setIdSelected, setIdList, setLis
     const deleteList = (id, e) => {
         e.preventDefault();
         if (id === idSelected) {
-          setIdSelected(null);
+          setIdSelected('');
         }
     
         setTasks(tasks.filter(task => {
@@ -73,5 +75,16 @@ const List = ({ list, lists, idSelected, tasks, setIdSelected, setIdList, setLis
         </li>
     );
 }
+
+List.propTypes = {
+    list: PropTypes.object.isRequired, 
+    lists: PropTypes.array.isRequired, 
+    idSelected: PropTypes.string.isRequired, 
+    tasks: PropTypes.array.isRequired, 
+    setIdSelected: PropTypes.func.isRequired, 
+    setIdList: PropTypes.func.isRequired, 
+    setLists: PropTypes.func.isRequired, 
+    setTasks: PropTypes.func.isRequired
+};
  
 export default List;

@@ -1,4 +1,5 @@
 import Task from "./Task";
+import PropTypes from 'prop-types';
 
 const Tasks = ({ idSelected, tasks, setIdTask, setTasks }) => {
     return (
@@ -20,5 +21,12 @@ const Tasks = ({ idSelected, tasks, setIdTask, setTasks }) => {
         </ul>
     );
 }
+
+Tasks.propTypes = {
+    idSelected: PropTypes.string.isRequired, 
+    tasks: PropTypes.array.isRequired, 
+    setIdTask: PropTypes.func.isRequired, 
+    setTasks: PropTypes.func.isRequired
+};
  
 export default Tasks;
